@@ -74,11 +74,11 @@ public class Calculator {
 			case '^':
 				result = exponent(value1,value2);
 				break;		
-			case '*':
-				result = multiply(value1,value2);
-				break;
 			case '\\':
 				result = divide(value1,value2);
+				break;
+			case '*':
+				result = multiply(value1,value2);
 				break;
 			case '+':
 				result = add(value1,value2);
