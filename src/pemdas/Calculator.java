@@ -74,6 +74,9 @@ public class Calculator {
 			case '^':
 				result = exponent(value1,value2);
 				break;		
+			case '%':
+				result = modulus(value1,value2);
+				break;		
 			case '\\':
 				result = divide(value1,value2);
 				break;
@@ -100,7 +103,11 @@ public class Calculator {
 	}
 
 	
-	
+	// Handle exponential power and root functions
+	double modulus (double value1, double value2)
+	{
+		return value1 % value2;
+	}
 	// Handle exponential power and root functions
 	double exponent (double value1, double value2)
 	{
