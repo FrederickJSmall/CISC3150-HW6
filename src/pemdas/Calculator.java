@@ -3,16 +3,17 @@ package pemdas;
 public class Calculator {
 	boolean validate(String value,String regex)
 	{
+		if (isParenthesisBalanced(value) == false)
+		{
+			System.out.println("Unbalended statement");
+			return false;
+		}
+		
 		System.out.println("Value="+value);
 		System.out.println("Regex="+regex);		
 	    return value.matches(regex);
 	}
-	// Handle parentheses first
-	double parentheses (double value1, double value2)
-	{
-		return value1 + value2;
-	}
-	// Check to see if the parenthesis for the statemant is properly
+	// Check to see if the parenthesis for the statement is properly
 	// balanced 
 	boolean isParenthesisBalanced(String value)
 	{
@@ -23,9 +24,37 @@ public class Calculator {
 				balanced++;
 			if (value.charAt(i)== ')')
 				balanced--;
-	}
+		}
 		return balanced == 0 ? true : false; 
 	}
+	// Check to see if the parenthesis for the statement is properly
+	// balanced 
+	boolean isNumber(String[] value)
+	{
+		for (int i=0; i< value.length; i++)
+		{
+			try
+			{
+				Double.parseDouble(value[i]);
+				System.out.println("Is an number="+ value[i]);
+			}
+			catch(Exception ex)
+			{
+				System.out.println("Is not an number="+ value[i]);
+				return false;
+			}
+		}
+		return true; 
+	}	
+	
+	
+	
+	// Handle parentheses first
+	double parentheses (double value1, double value2)
+	{
+		return value1 + value2;
+	}
+
 	
 	
 	// Handle exponential power and root functions
