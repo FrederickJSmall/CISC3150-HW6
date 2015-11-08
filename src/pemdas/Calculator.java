@@ -46,8 +46,42 @@ public class Calculator {
 		}
 		return true; 
 	}	
+	// Check to see if its a valid operation
+	// balanced 
+	boolean isValidOperation(String[] value)
+	{
+		/*
+		for (int i=0; i< value.length; i++)
+		{
+			if (value[i] !='')
+			else (value[i] !='')
+			
+				return false;
+			}
+		}
+		return true;
+		*/
+		return false;
+	}		
 	
-	
+	double performOperation(char operation, Double value1, Double Value2)
+	{
+		Double result = 0.0;
+		switch (operation)
+		{
+			case '+':
+				break;
+			case '-':
+				break;
+			case '*':
+				break;
+			case '\\':
+				break;
+			default:
+				break;
+		}
+		return result;
+	}		
 	
 	// Handle parentheses first
 	double parentheses (double value1, double value2)
