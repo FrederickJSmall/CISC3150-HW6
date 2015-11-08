@@ -1,5 +1,7 @@
 package pemdas;
 
+import java.lang.Exception;
+
 public class Calculator {
 	boolean validate(String value,String regex)
 	{
@@ -64,20 +66,28 @@ public class Calculator {
 		return false;
 	}		
 	
-	double performOperation(char operation, Double value1, Double Value2)
+	double performOperation(char operation, Double value1, Double value2)
 	{
 		Double result = 0.0;
 		switch (operation)
 		{
-			case '+':
-				break;
-			case '-':
-				break;
+			case '^':
+				result = exponent(value1,value2);
+				break;		
 			case '*':
+				result = multiply(value1,value2);
 				break;
 			case '\\':
+				result = divide(value1,value2);
+				break;
+			case '+':
+				result = add(value1,value2);
+				break;
+			case '-':
+				result = subtract(value1,value2);
 				break;
 			default:
+				//throw new java.lang.Exception.;
 				break;
 		}
 		return result;
@@ -92,9 +102,9 @@ public class Calculator {
 	
 	
 	// Handle exponential power and root functions
-	double power (double value1, double value2)
+	double exponent (double value1, double value2)
 	{
-		return value1 + value2;
+		return Math.pow(value1, value2);
 	}
 	double root (double value1, double value2)
 	{
