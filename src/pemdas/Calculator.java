@@ -55,7 +55,7 @@ public class Calculator {
 		return false;
 	}		
 	
-	double performOperation(char operation, Double value1, Double value2)
+	double performOperation(char operation, Double value1, Double value2) throws IllegalArgumentException
 	{
 		Double result = 0.0;
 		switch (operation)
@@ -104,11 +104,13 @@ public class Calculator {
 	}
 	double root (double value1, double value2)
 	{
-		return value1 + value2;
+		return Math.sqrt(value1);//value1 + value2;
 	}
 	// Handle division and multiplication
-	double divide (double value1, double value2)
+	double divide (double value1, double value2) throws ArithmeticException
 	{
+		if (value2 == 0)
+			throw new ArithmeticException("Can't divide by zero");
 		return value1 / value2;
 	}
 	double multiply (double value1, double value2)

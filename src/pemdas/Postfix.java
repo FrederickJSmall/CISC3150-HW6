@@ -15,7 +15,7 @@ public class Postfix {
 		this.calculator = new Calculator();
 	}
 	
-    public String calculate(String input) {
+    public String calculate(String input) throws IllegalArgumentException{
         List<String> processedList = new ArrayList<String>();
         if (!input.isEmpty()) 
         {
@@ -58,8 +58,14 @@ public class Postfix {
                     leftOperand = Double.parseDouble(operands.pop());
                     result = calculator.performOperation('+',leftOperand ,rightOperand);//leftOperand + rightOperand;
                     operands.push(result+"");
-                }
-            } else {
+	            } else if (expression.equals("%")) {
+	                rightOperand = Double.parseDouble(operands.pop());
+	                leftOperand = Double.parseDouble(operands.pop());
+	                result = calculator.performOperation('%',leftOperand ,rightOperand);//leftOperand + rightOperand;
+	                operands.push(result+"");
+	            }
+            } 
+            else {
                 return null;
             }
         }
