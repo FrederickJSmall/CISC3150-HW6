@@ -39,28 +39,28 @@ public class Postfix {
             	double leftOperand = 0;
             	double result = 0;
                 if (expression.equals("*")) {
-                    rightOperand = Double.parseDouble(operands.pop());
-                    leftOperand = Double.parseDouble(operands.pop());
+                    rightOperand = pop(operands);//Double.parseDouble(operands.pop());
+                    leftOperand = pop(operands);//Double.parseDouble(operands.pop());
                     result = calculator.performOperation('*',leftOperand ,rightOperand);// leftOperand * rightOperand;
                     operands.push(result+"");
                 } else if (expression.equals("-")) {
-                    rightOperand = Double.parseDouble(operands.pop());
-                    leftOperand = Double.parseDouble(operands.pop());
+                    rightOperand = pop(operands);//Double.parseDouble(operands.pop());
+                    leftOperand = pop(operands);//Double.parseDouble(operands.pop());
                     result = calculator.performOperation('-',leftOperand ,rightOperand);//leftOperand - rightOperand;
                     operands.push(result+"");
                 } else if (expression.equals("/")) {
-                    rightOperand = Double.parseDouble(operands.pop());
-                    leftOperand = Double.parseDouble(operands.pop());
+                    rightOperand = pop(operands);//Double.parseDouble(operands.pop());
+                    leftOperand = pop(operands);//Double.parseDouble(operands.pop());
                     result = calculator.performOperation('/',leftOperand ,rightOperand);//leftOperand / rightOperand;
                     operands.push(result+"");
                 } else if (expression.equals("+")) {
-                    rightOperand = Double.parseDouble(operands.pop());
-                    leftOperand = Double.parseDouble(operands.pop());
+                    rightOperand = pop(operands);//Double.parseDouble(operands.pop());
+                    leftOperand = pop(operands);//Double.parseDouble(operands.pop());
                     result = calculator.performOperation('+',leftOperand ,rightOperand);//leftOperand + rightOperand;
                     operands.push(result+"");
 	            } else if (expression.equals("%")) {
-	                rightOperand = Double.parseDouble(operands.pop());
-	                leftOperand = Double.parseDouble(operands.pop());
+	                rightOperand = pop(operands);//Double.parseDouble(operands.pop());
+	                leftOperand = pop(operands);//Double.parseDouble(operands.pop());
 	                result = calculator.performOperation('%',leftOperand ,rightOperand);//leftOperand + rightOperand;
 	                operands.push(result+"");
 	            }
@@ -72,4 +72,12 @@ public class Postfix {
         calculator = null;
         return operands.pop();
     }
+    private Double pop(Stack<String> operands)
+    {
+    	if (operands.isEmpty())
+    		throw new NotEnoughNumbersException();
+    	return Double.parseDouble(operands.pop());
+    	
+    }
+   
 }
