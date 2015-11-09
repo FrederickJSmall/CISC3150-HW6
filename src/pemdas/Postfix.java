@@ -31,10 +31,10 @@ public class Postfix {
         Iterator<String> tokens = processedList.iterator();
         while (tokens.hasNext()) {
             String expression = tokens.next();
-            System.out.print(expression);
+            //System.out.print(expression);
             if (expression.matches("[0-9]*")) {
                 operands.push(expression);
-            } else if (expression.matches("[*-/+]")) {
+            } else if (expression.matches("[*-/+%]")) {
             	//Pop the last two operands off the stack and run calculation
             	double rightOperand = 0;
             	double leftOperand = 0;

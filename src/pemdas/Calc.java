@@ -16,7 +16,7 @@ public class Calc {
 		//Parser.calculate("65 3 5 * + 83 -");
 		try
 		{
-			System.out.println(parse.calculate("12 3 + 7 9 x -"));
+			System.out.println(parse.calculate("12 3 + 7 9 % -"));
 		}
 		catch (NotANumberException exception) 
 		{
