@@ -31,6 +31,7 @@ public class Postfix {
         Iterator<String> tokens = processedList.iterator();
         while (tokens.hasNext()) {
             String expression = tokens.next();
+            System.out.print(expression);
             if (expression.matches("[0-9]*")) {
                 operands.push(expression);
             } else if (expression.matches("[*-/+]")) {
@@ -63,10 +64,12 @@ public class Postfix {
 	                leftOperand = pop(operands);//Double.parseDouble(operands.pop());
 	                result = calculator.performOperation('%',leftOperand ,rightOperand);//leftOperand + rightOperand;
 	                operands.push(result+"");
+	            }else {
+	            	throw new IllegalOperationException();
 	            }
             } 
             else {
-                return null;
+            	throw new IllegalOperationException("Invalid value in expression:" + expression);//return null;
             }
         }
         calculator = null;
