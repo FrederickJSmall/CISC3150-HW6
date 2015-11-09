@@ -52,17 +52,6 @@ public class Calculator {
 	// balanced 
 	boolean isValidOperation(String[] value)
 	{
-		/*
-		for (int i=0; i< value.length; i++)
-		{
-			if (value[i] !='')
-			else (value[i] !='')
-			
-				return false;
-			}
-		}
-		return true;
-		*/
 		return false;
 	}		
 	
@@ -77,7 +66,7 @@ public class Calculator {
 			case '%':
 				result = modulus(value1,value2);
 				break;		
-			case '\\':
+			case '/':
 				result = divide(value1,value2);
 				break;
 			case '*':
@@ -120,7 +109,7 @@ public class Calculator {
 	// Handle division and multiplication
 	double divide (double value1, double value2)
 	{
-		return value1 + value2;
+		return value1 / value2;
 	}
 	double multiply (double value1, double value2)
 	{
@@ -133,7 +122,7 @@ public class Calculator {
 	}
 	double subtract (double value1, double value2)
 	{
-		return value1 + value2;
+		return value1 - value2;
 	}
 
 
