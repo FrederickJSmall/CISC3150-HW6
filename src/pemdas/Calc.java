@@ -14,11 +14,21 @@ public class Calc {
 		//Parser.calculate("(65 + (5 * 3)) - 83");
 		//Parser.calculate("65 + 5 * 3 - 83");
 		//Parser.calculate("65 3 5 * + 83 -");
-		System.out.println(parse.calculate("12 3 + 7 9 * -")); 
-		//System.out.println(parse.calculate("2 + 3 - 7 * 9 / 3 + 11"));
-		
-		
-
-		
+		try
+		{
+		System.out.println(parse.calculate("12 3 + 7 9 * -"));
+		}
+		catch (NotANumberException exception) 
+		{
+			
+		}
+		catch (NotEnoughNumbersException exception) 
+		{
+			
+		}
+		catch (IllegalArgumentException exception) 
+		{
+			
+		}
 	}
 }

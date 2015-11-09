@@ -79,8 +79,7 @@ public class Calculator {
 				result = subtract(value1,value2);
 				break;
 			default:
-				//throw new java.lang.Exception.;
-				break;
+				throw new IllegalOperationException();
 		}
 		return result;
 	}		
