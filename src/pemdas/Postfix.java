@@ -63,6 +63,7 @@ public class Postfix {
                 return null;
             }
         }
+        calculator = null;
         return operands.pop();
     }
 }
