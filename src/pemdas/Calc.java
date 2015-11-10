@@ -7,8 +7,12 @@ public class Calc {
 
 		try
 		{
-			System.out.println(postfix.calculate("65 + 5"));			
-			System.out.println(postfix.calculate("65 + 5 * 3 - 83"));
+			System.out.println("Result for the satatement is : " + postfix.calculate("65 + 5"));
+			System.out.println();
+			System.out.println("Result for the satatement is : " + postfix.calculate("65 + 5 * 3 - 83"));
+			System.out.println();
+			System.out.println("Result for the satatement is : " + postfix.calculate("65"));
+			System.out.println();
 		}
 		catch (NotANumberException exception) 
 		{

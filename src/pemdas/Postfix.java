@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Postfix {
 	
 	private Calculator calculator;
-	//private String infixString;
+	private String statement;
 	
 	public Postfix()
 	{
@@ -20,8 +20,9 @@ public class Postfix {
 	}
 	public String calculate(String statement)
 	{
-		this.calculator = new Calculator();
 		String value;
+		this.calculator = new Calculator();
+		this.statement = statement;
 		value = calculatePostFix(statement);
 		return calculateTotal(value);
 	}
@@ -104,7 +105,7 @@ public class Postfix {
     	for(int i = 0; i < infixExpressions.length; i++){
     		//str = infix.substring(i,i+1);
     		expression = infixExpressions[i];
-    		System.out.print(expression);
+    		//System.out.print(expression);
     		//if(str.matches("[a-zA-Z]|\\d*"))
     		if(expression.matches("\\d*"))
     			postfixString += expression + " ";
@@ -133,7 +134,8 @@ public class Postfix {
     {
     	postfixString += opStack.pop() + " ";
     }
-    System.out.println("\nPostfix of the expression is: " + postfixString);
+    System.out.println("Infix for the satatement is: " + this.statement);
+    System.out.println("Postfix for the satatement is: " + postfixString);
     return postfixString;
     }
 	private String evaluateOperators(String operator1, String operator2) throws IllegalOperationException {
