@@ -54,7 +54,13 @@ public class Calculator {
 	{
 		return false;
 	}		
-	
+	boolean isOperator(String ch) throws IllegalOperationException {
+		String operators = "*/%+-";
+		if (operators.indexOf(ch) != -1)
+			return true;
+		else
+			return false;
+	}
 	double performOperation(char operation, Double value1, Double value2) throws IllegalArgumentException
 	{
 		Double result = 0.0;

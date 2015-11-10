@@ -7,6 +7,7 @@ public class Calc {
 
 		try
 		{
+			System.out.println(postfix.calculate("65 + 5"));			
 			System.out.println(postfix.calculate("65 + 5 * 3 - 83"));
 		}
 		catch (NotANumberException exception) 

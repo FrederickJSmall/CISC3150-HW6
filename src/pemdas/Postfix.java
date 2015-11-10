@@ -16,10 +16,11 @@ public class Postfix {
 	
 	public Postfix()
 	{
-		this.calculator = new Calculator();
+		//this.calculator = new Calculator();
 	}
 	public String calculate(String statement)
 	{
+		this.calculator = new Calculator();
 		String value;
 		value = calculatePostFix(statement);
 		return calculateTotal(value);
@@ -107,7 +108,7 @@ public class Postfix {
     		//if(str.matches("[a-zA-Z]|\\d*"))
     		if(expression.matches("\\d*"))
     			postfixString += expression + " ";
-    		else if (isOperator(expression)){
+    		else if (this.calculator.isOperator(expression)){
     			if (opStack.isEmpty()){ // if no operators are on the stack then add
     				opStack.push(expression);
     			}
@@ -148,11 +149,11 @@ public class Postfix {
 		else
 			return operator1;
 	}
-	private boolean isOperator(String ch) throws IllegalOperationException {
-		String operators = "*/%+-";
-		if (operators.indexOf(ch) != -1)
-			return true;
-		else
-			return false;
-	}
+	//private boolean isOperator(String ch) throws IllegalOperationException {
+	//	String operators = "*/%+-";
+	//	if (operators.indexOf(ch) != -1)
+	//		return true;
+	//	else
+	//		return false;
+	//}
 }
