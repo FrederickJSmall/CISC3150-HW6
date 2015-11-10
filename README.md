@@ -13,6 +13,8 @@ http://interactivepython.org/runestone/static/pythonds/BasicDS/InfixPrefixandPos
 Unknown (Unknown) Polish notation
 https://en.wikipedia.org/wiki/Polish_notation
 
+Math Is Fun (2015) Order of Operations - PEMDAS
+http://www.mathsisfun.com/operation-order-pemdas.html
 
 
 
