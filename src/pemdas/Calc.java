@@ -15,7 +15,11 @@ public class Calc {
 			//System.out.println("Result for the satatement is : " + postfix.calculate(expression));
 			//System.out.println();
 			
-			expression="65 #";
+			//expression="65 #";
+			//System.out.println("Result for the satatement is : " + postfix.calculate(expression));
+			//System.out.println();
+
+			expression="65 + y";
 			System.out.println("Result for the satatement is : " + postfix.calculate(expression));
 			System.out.println();
 		}
