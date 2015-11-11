@@ -39,15 +39,20 @@ public class Calculator {
 		
 		int operandsCount = 0;
 		int operatorsCount = 0;
+		int operatorsInvalidCount = 0;
 		for (int i=0; i<infixExpressions.length; i++)
 		{
             if (infixExpressions[i].matches("[0-9]*"))
             	operandsCount++;
-            if (infixExpressions[i].toString().matches(operators))
-            	operatorsCount++;                
+            else if (infixExpressions[i].toString().matches(operators))
+            	operatorsCount++;
+            else operatorsInvalidCount++;
 		}
+		if (operatorsInvalidCount > 0)
+			throw new IllegalArgumentException("Illegal Operators provided");
 		if (operandsCount != operatorsCount +1)
 			throw new NotEnoughNumbersException("Not enough numbers in statement");
+		
 	}
 	// Check to see if the parenthesis for the statement is properly
 	// balanced 
