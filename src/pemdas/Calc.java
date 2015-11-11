@@ -19,9 +19,17 @@ public class Calc {
 			//System.out.println("Result for the satatement is : " + postfix.calculate(expression));
 			//System.out.println();
 
-			expression="65 + y";
+			//expression="65 + y";
+			//System.out.println("Result for the satatement is : " + postfix.calculate(expression));
+			//System.out.println();
+			
+			expression="65 / 0";
 			System.out.println("Result for the satatement is : " + postfix.calculate(expression));
 			System.out.println();
+		}
+		catch (ArithmeticException exception) 
+		{
+			System.out.println("\nArithmetic Exception [" + expression + "]");
 		}
 		catch (NotANumberException exception) 
 		{
