@@ -137,8 +137,8 @@ public class Postfix {
     {
     	postfixString += opStack.pop() + " ";
     }
-    System.out.println("Infix for the satatement is: " + this.statement);
-    System.out.println("Postfix for the satatement is: " + postfixString);
+    System.out.println("Infix   for the statement is: \t" + this.statement);
+    System.out.println("Postfix for the statement is: \t" + postfixString);
     return postfixString;
     }
 	private String evaluateOperators(String operator1, String operator2) throws IllegalOperationException {

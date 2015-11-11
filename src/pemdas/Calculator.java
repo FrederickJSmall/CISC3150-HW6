@@ -4,7 +4,9 @@ import java.lang.Exception;
 
 public class Calculator {
 	
-	//private String final operators = "*/%+-";
+	final String OPERATORS = "[*/%+-]";
+	final String LETTERS = "[a-zA-Z]*";
+	final String NUMBERS = "[0-9]*";
 	
 	void validate(String[] infixExpressions)
 	{
@@ -35,7 +37,7 @@ public class Calculator {
 	}
 	void isToFewNumbers(String[] infixExpressions)
 	{
-		String operators = "[*/%+-]";
+		//String operators = "[*/%+-]";
 		
 		int operandsCount = 0;
 		int operatorsCount = 0;
@@ -43,11 +45,11 @@ public class Calculator {
 		int operatorsIsNotANumberCount = 0;
 		for (int i=0; i<infixExpressions.length; i++)
 		{
-            if (infixExpressions[i].matches("[0-9]*"))
+            if (infixExpressions[i].matches(this.NUMBERS))
             	operandsCount++;
-            else if (infixExpressions[i].toString().matches(operators))
+            else if (infixExpressions[i].toString().matches(this.OPERATORS))
             	operatorsCount++;
-            else if (infixExpressions[i].toString().matches("[a-zA-Z]*"))
+            else if (infixExpressions[i].toString().matches(this.LETTERS))
             	operatorsIsNotANumberCount++;            
             else operatorsInvalidCount++;
 		}
@@ -85,8 +87,8 @@ public class Calculator {
 		return false;
 	}		
 	boolean isOperator(String ch) throws IllegalOperationException {
-		String operators = "*/%+-";
-		if (operators.indexOf(ch) != -1)
+		//String operators = "*/%+-";
+		if (this.OPERATORS.indexOf(ch) != -1)
 			return true;
 		else
 			return false;
