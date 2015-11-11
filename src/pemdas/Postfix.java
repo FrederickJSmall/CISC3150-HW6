@@ -18,12 +18,15 @@ public class Postfix {
 	{
 		//this.calculator = new Calculator();
 	}
-	public String calculate(String statement)
+	public String calculate(String statement) throws IllegalOperationException,NotANumberException,NotEnoughNumbersException
 	{
 		String value;
 		this.calculator = new Calculator();
 		this.statement = statement;
-		value = calculatePostFix(statement);
+		
+		String[] infixExpressions = statement.split(" ");
+		this.calculator.validate(infixExpressions);
+		value = calculatePostFix(infixExpressions);
 		return calculateTotal(value);
 	}
     private String calculateTotal(String input) throws IllegalArgumentException{
@@ -93,13 +96,13 @@ public class Postfix {
     	return Double.parseDouble(operands.pop());
     	
     }
-    public String calculatePostFix(String calculation){
+    public String calculatePostFix(String[] infixExpressions){
     	String expression = "";
     	String postfixString = "";
     	//String infixString = calculation;
     	Stack<String> opStack = new Stack<String>();
 
-    	String[] infixExpressions = calculation.split(" ");
+    	//String[] infixExpressions = calculation.split(" ");
     	
     	//for(int i = 0; i < infix.length(); i++){
     	for(int i = 0; i < infixExpressions.length; i++){

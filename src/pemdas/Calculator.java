@@ -3,31 +3,51 @@ package pemdas;
 import java.lang.Exception;
 
 public class Calculator {
-	boolean validate(String value,String regex)
+	
+	//private String final operators = "*/%+-";
+	
+	void validate(String[] infixExpressions)
 	{
-		if (isParenthesisBalanced(value) == false)
+		if (isParenthesisBalanced(infixExpressions) == false)
 		{
-			System.out.println("Unbalended statement");
-			return false;
+			//System.out.println("Unbalended statement");
+			throw new IllegalOperationException("Unbalended statement");
 		}
-		
-		System.out.println("Value="+value);
-		System.out.println("Regex="+regex);		
-	    return value.matches(regex);
+		isToFewNumbers(infixExpressions);
+		//System.out.println("Value="+value);
+		//System.out.println("Regex="+regex);		
+	    //return value.matches(regex);
+		//return true;
 	}
 	// Check to see if the parenthesis for the statement is properly
 	// balanced 
-	boolean isParenthesisBalanced(String value)
+	boolean isParenthesisBalanced(String[] infixExpressions)
 	{
 		int balanced = 0;
-		for (int i=0; i<value.length(); i++)
+		for (int i=0; i<infixExpressions.length; i++)
 		{
-			if (value.charAt(i)== '(')
+			if (infixExpressions[i]== "(")
 				balanced++;
-			if (value.charAt(i)== ')')
+			if (infixExpressions[i]== ")")
 				balanced--;
 		}
 		return balanced == 0 ? true : false; 
+	}
+	void isToFewNumbers(String[] infixExpressions)
+	{
+		String operators = "[*/%+-]";
+		
+		int operandsCount = 0;
+		int operatorsCount = 0;
+		for (int i=0; i<infixExpressions.length; i++)
+		{
+            if (infixExpressions[i].matches("[0-9]*"))
+            	operandsCount++;
+            if (infixExpressions[i].toString().matches(operators))
+            	operatorsCount++;                
+		}
+		if (operandsCount != operatorsCount +1)
+			throw new NotEnoughNumbersException("Not enough numbers in statement");
 	}
 	// Check to see if the parenthesis for the statement is properly
 	// balanced 
