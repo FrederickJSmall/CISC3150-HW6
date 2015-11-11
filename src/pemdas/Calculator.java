@@ -49,7 +49,7 @@ public class Calculator {
             else operatorsInvalidCount++;
 		}
 		if (operatorsInvalidCount > 0)
-			throw new IllegalArgumentException("Illegal Operators provided");
+			throw new IllegalOperationException("Illegal Operators provided");
 		if (operandsCount != operatorsCount +1)
 			throw new NotEnoughNumbersException("Not enough numbers in statement");
 		

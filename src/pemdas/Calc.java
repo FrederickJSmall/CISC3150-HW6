@@ -27,6 +27,11 @@ public class Calc {
 		{
 			System.out.println("\nNotEnoughNumbersException [" + expression + "]");
 		}
+		catch (IllegalOperationException ex) 
+		{
+			System.out.println("\nIllegalOperationException [" + expression + "]");
+			//System.out.println(ex.getStackTrace());
+		}
 		catch (IllegalArgumentException ex) 
 		{
 			System.out.println("\nIllegalArgumentException [" + expression + "]");
