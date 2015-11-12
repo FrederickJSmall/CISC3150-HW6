@@ -10,8 +10,8 @@ public class Calc {
 		String expression = "";
 		try
 		{
-    		//expression = keyboard.nextLine();
-			expression="65 + -5.3";
+    		expression = keyboard.nextLine();
+			//expression="65 + -5.3";
 			//System.out.println("Result for the satatement is : " + postfix.calculate(expression));
 			//System.out.println();
 			
