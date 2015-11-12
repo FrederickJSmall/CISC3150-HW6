@@ -11,9 +11,9 @@ public class Calc {
 		try
 		{
     		//expression = keyboard.nextLine();
-			expression="65 + -5";
-			System.out.println("Result for the satatement is : " + postfix.calculate(expression));
-			System.out.println();
+			expression="65 + -5.3";
+			//System.out.println("Result for the satatement is : " + postfix.calculate(expression));
+			//System.out.println();
 			
 			//expression="65 + 5 * 3 - 83";
 			//System.out.println("Result for the satatement is : " + postfix.calculate(expression));

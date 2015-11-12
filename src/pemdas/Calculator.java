@@ -8,7 +8,7 @@ public class Calculator {
 	final String LETTERS = "[a-zA-Z]*";
 	//final String NUMBERS = "^+?[0-9]*";
 	//final String NUMBERS = "^[-+]?[1-9][0-9]*$";
-	final String NUMBERS = "^-?[1-9][0-9]{0,2}$";
+	public final String NUMBERS = "^-?[1-9].?[0-9]{0,2}$";
 	
 	void validate(String[] infixExpressions)
 	{
