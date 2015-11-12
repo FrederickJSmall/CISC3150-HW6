@@ -1,0 +1,82 @@
+2 + 3 - 7 * 9 / 3 + 11
+Infix   for the statement is: 	2 + 3 - 7 * 9 / 3 + 11
+Postfix for the statement is: 	2 3 + 7 9 * 3 / - 11 + 
+
+Result                    	-5.0
+**************************************************************
+
+65 + -5.3
+Infix   for the statement is: 	65 + -5.3
+Postfix for the statement is: 	65 -5.3 + 
+
+Result                    	59.7
+**************************************************************
+
+65 + 5 * 3 - 83
+Infix   for the statement is: 	65 + 5 * 3 - 83
+Postfix for the statement is: 	65 5 3 * + 83 - 
+
+Result                    	-3.0
+**************************************************************
+
+65 #
+
+Illegal operation supplied [65 #]
+**************************************************************
+
++ 12
+
+Not enough numbers provided to perform calculation [+ 12]
+**************************************************************
+
+65 + 
+
+Not enough numbers provided to perform calculation [65 + ]
+**************************************************************
+
+65 @ 35
+
+Illegal operation supplied [65 @ 35]
+**************************************************************
+
+65 + y
+
+Not all the expressions are numbers [65 + y]
+**************************************************************
+
+65 / 0
+Infix   for the statement is: 	65 / 0
+Postfix for the statement is: 	65 0 / 
+
+Arithmetic exception encountered [65 / 0]
+**************************************************************
+
+2.3 + 7 * 3 + 11
+Infix   for the statement is: 	2.3 + 7 * 3 + 11
+Postfix for the statement is: 	2.3 7 3 * + 11 + 
+
+Result                    	34.3
+**************************************************************
+
+10 % 2
+Infix   for the statement is: 	10 % 2
+Postfix for the statement is: 	10 2 % 
+
+Result                    	0.0
+**************************************************************
+
+5 + 10 % 2
+Infix   for the statement is: 	5 + 10 % 2
+Postfix for the statement is: 	5 10 2 % + 
+
+Result                    	5.0
+**************************************************************
+
+5 + 11 % 2
+Infix   for the statement is: 	5 + 11 % 2
+Postfix for the statement is: 	5 11 2 % + 
+
+Result                    	6.0
+**************************************************************
+
+

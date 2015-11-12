@@ -45,8 +45,6 @@ public class Calc {
 			
 			//expression="2 + 3 - 7 * 9 / 3 + 11";
 			System.out.println("\nResult                    \t" + postfix.calculate(expression));
-			System.out.println("**************************************************************");
-			System.out.println();
 		}
 		catch (ArithmeticException exception) 
 		{
@@ -69,6 +67,11 @@ public class Calc {
 		{
 			System.out.println("\nUnknown illegal argument encountered [" + expression + "]");
 			//System.out.println(ex.getStackTrace());
+		}
+		finally
+		{
+			System.out.println("**************************************************************");
+			System.out.println();			
 		}
 	}
 }
