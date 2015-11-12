@@ -6,7 +6,9 @@ public class Calculator {
 	
 	final String OPERATORS = "[*/%+-]";
 	final String LETTERS = "[a-zA-Z]*";
-	final String NUMBERS = "[0-9]*";
+	//final String NUMBERS = "^+?[0-9]*";
+	//final String NUMBERS = "^[-+]?[1-9][0-9]*$";
+	final String NUMBERS = "^-?[1-9][0-9]{0,2}$";
 	
 	void validate(String[] infixExpressions)
 	{
@@ -45,6 +47,7 @@ public class Calculator {
 		int operatorsIsNotANumberCount = 0;
 		for (int i=0; i<infixExpressions.length; i++)
 		{
+			System.out.println(infixExpressions[i].toString());
             if (infixExpressions[i].matches(this.NUMBERS))
             	operandsCount++;
             else if (infixExpressions[i].toString().matches(this.OPERATORS))

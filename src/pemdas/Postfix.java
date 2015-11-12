@@ -46,7 +46,9 @@ public class Postfix {
         while (tokens.hasNext()) {
             String expression = tokens.next();
             //System.out.print(expression);
-            if (expression.matches("[0-9]*")) {
+            //^-?[1-9][0-9]{0,2}$
+            //if (expression.matches("[0-9]*")) {
+            if (expression.matches("^-?[1-9][0-9]{0,2}$")) {
                 operands.push(expression);
             } else if (expression.matches("[*-/+%]")) {
             	//Pop the last two operands off the stack and run calculation
@@ -110,7 +112,9 @@ public class Postfix {
     		expression = infixExpressions[i];
     		//System.out.print(expression);
     		//if(str.matches("[a-zA-Z]|\\d*"))
-    		if(expression.matches("\\d*"))
+    		//^-?[1-9][0-9]{0,2}$
+    		//if(expression.matches("\\d*"))
+    		if(expression.matches("^-?[1-9][0-9]{0,2}$"))
     			postfixString += expression + " ";
     		else if (this.calculator.isOperator(expression)){
     			if (opStack.isEmpty()){ // if no operators are on the stack then add
